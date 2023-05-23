@@ -13,10 +13,15 @@
 #include <errno.h>
 
 #define BUFFER_SIZE 1024
-#define MAX_ARGS 10
+#define MAX_ARGS 256
 
-char **get_path_directories(char *path);
-char *check_path(char *command, char **directories);
-void excut_cmd(char* command_path, char** args, char* argv[]);
+char **split_path(char *ptr);
+char *detect_find(char *grid, char **dest);
+void ecut_com(char *comme_pathe, char **argc, char *argv[]);
+extern char **environ;
+int _putchar(char c);
+char *_strcat(char *dest, char *src);
+char *_strcpy(char *dest, char *src);
+int _strcmp(char *s1, char *s2);
 
 #endif
