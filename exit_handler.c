@@ -11,20 +11,10 @@
 
 void exit_handler(char **args, size_t nbr_of_args)
 {
-	int status = EXIT_SUCCESS, i = 0;
+	int status = EXIT_SUCCESS;
 
-	if (!args[1])
-		exit(status);
-	
-	while (args[1][i])
-	{
-		if (!isdigit(args[1][i++]))
-		{
-			perror("Illegal number");
-			return;
-		}
-	}
-	status = _atoi(args[1]);
+	if (args[1])
+		status = _atoi(args[1]);
 
 	free_vector(args, nbr_of_args);
 	exit(status);
