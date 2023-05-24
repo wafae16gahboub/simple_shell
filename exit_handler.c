@@ -19,7 +19,8 @@ void exit_handler(char **args, size_t nbr_of_args)
 		{
 			if (!isdigit(args[1][i]))
 			{
-				perror("Illegal number");
+				/*perror("Illegal number");*/
+				fprintf(stderr, "Illegal number: %s\n", args[1]);
 				free_vector(args, nbr_of_args);
 				return;
 			}
@@ -30,15 +31,3 @@ void exit_handler(char **args, size_t nbr_of_args)
 	free_vector(args, nbr_of_args);
 	exit(status);
 }
-/*
-*void exit_handler(char **args, size_t nbr_of_args)
-*{
-*	int status = EXIT_SUCCESS;
-*
-*	if (args[1])
-*		status = _atoi(args[1]);
-*
-*	free_vector(args, nbr_of_args);
-*	exit(status);
-*}
-*/
