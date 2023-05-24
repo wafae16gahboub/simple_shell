@@ -25,7 +25,7 @@ void read_input(char **buffer, size_t *buffer_size, bool *is_from_pipe)
 	{
 		free(*buffer);
 		perror("Error (getline)");
-		exit(EXIT_FAILURE);
+		exit(EXIT_SUCCESS);
 	}
 
 	if ((*buffer)[bytes_size - 1] == '\n')
