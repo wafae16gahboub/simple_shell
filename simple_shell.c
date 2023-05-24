@@ -16,6 +16,8 @@ int main(void)
 	{
 		read_input(&buffer, &buffer_size, &is_from_pipe);
 		argv = str_split_arr(buffer, "\t ", &word_count);
+		if (!argv)
+			continue;
 		if (builtin_handler(argv, word_count, &buffer))
 			continue;
 
