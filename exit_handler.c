@@ -24,7 +24,7 @@ void exit_handler(char **args, size_t nbr_of_args)
 				return;
 			}
 		}
-		status = atoi(args[1]);
+		status = _atoi(args[1]);
 	}
 
 	free_vector(args, nbr_of_args);
