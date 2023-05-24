@@ -18,6 +18,7 @@ int main(void)
 		argv = str_split_arr(buffer, "\t ", &word_count);
 		if (!argv)
 			continue;
+
 		if (builtin_handler(argv, word_count, &buffer))
 			continue;
 
@@ -26,7 +27,7 @@ int main(void)
 			fullpath = find_file_in_path(argv[0], &buffer_status);
 			if (!fullpath)
 			{
-				perror("Error (file status)");
+				perror("hsh");
 				free_vector(argv, word_count);
 				continue;
 			}
