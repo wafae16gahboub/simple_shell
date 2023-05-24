@@ -17,6 +17,7 @@ bool builtin_handler(char **args, size_t nbr_of_args, char **buffer)
 		free(*buffer);
 		*buffer = NULL;
 		exit_handler(args, nbr_of_args);
+		return (true);
 	}
 	else if (_strncmp(args[0], "env", 3) == 0)
 	{

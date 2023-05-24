@@ -13,6 +13,7 @@
 #include <errno.h>
 #include <stdbool.h>
 #include <stddef.h>
+#include <ctype.h>
 
 #define MAX_WORDS 100
 extern char **environ;
