@@ -11,11 +11,14 @@
 
 void exit_handler(char **args, size_t nbr_of_args)
 {
-	int status = EXIT_SUCCESS, i;
+	int status = EXIT_SUCCESS, i = 0, startAt = 0;
 
 	if (nbr_of_args > 1)
 	{
-		for (i = 0; args[1][i] != '\0'; i++)
+		if (args[1][0] == '-')
+			startAt = 1;
+
+		for (i = startAt; args[1][i] != '\0'; i++)
 		{
 			if (!isdigit(args[1][i]))
 			{
