@@ -10,7 +10,6 @@
  * Return: A dynamically allocated array of strings or NULL if an error occurs
  */
 
-
 char **str_split_arr(char *str, char *delim, size_t *arrLen)
 {
 	char **words, *pStr = str;
@@ -49,6 +48,3 @@ char **str_split_arr(char *str, char *delim, size_t *arrLen)
 
 	return (words);
 }
-
-
-
