@@ -4,47 +4,46 @@
  * count_words - counts the number of words in a string seperated by
  *		 one or more delimiter.and it counts the length of
  *		 each word and stores them in an array.
- * @str: a string
- * @separats: a string of One or more delimiters to separate the string
- * @arr: a pointer to an array where the word's lengths will be stored
+ * @string: a string
+ * @delimiters: a string of One or more delimiters to separate the string
+ * @word_counts_arr: a pointer to an array where
+ *		the word's lengths will be stored
  *
  * Return: Number of words
  */
 
-int count_words(char *str, char *separats, unsigned int *arr)
+int count_words(char *string, char *delimiters, unsigned int *word_counts_arr)
 {
-	int words_count = 0, i;
-	bool inside_word = false, is_separator = false;
+	int num_words = 0, i;
+	bool inside_word = false, is_delimiter = false;
 
-	if (!str)
+	if (!string)
 		return (0);
 
-	while (*str)
+	for (; *string; string++)
 	{
-		is_separator = false;
-		for (i = 0; separats[i]; i++)
+		is_delimiter = false;
+		for (i = 0; delimiters[i]; i++)
 		{
-			if (*str == separats[i])
+			if (*string == delimiters[i])
 			{
-				is_separator = true;
+				is_delimiter = true;
 				break;
 			}
 		}
 
-		if (is_separator)
+		if (is_delimiter)
 			inside_word = false;
 		else
 		{
 			if (!inside_word)
 			{
-				arr[words_count] = 0;
+				word_counts_arr[num_words] = 0;
 				inside_word = true;
-				words_count++;
+				num_words++;
 			}
-			arr[words_count - 1]++;
+			word_counts_arr[num_words - 1]++;
 		}
-
-		str++;
 	}
-	return (words_count);
+	return (num_words);
 }

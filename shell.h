@@ -29,7 +29,7 @@ char *_getenv(char *name);
 void free_vector(char **vector, size_t len);
 void exit_handler(char **args, size_t nbr_of_args);
 void execute_cmd(char **args, size_t nbr_of_args);
-int count_words(char *str, char *separats, unsigned int *arr);
+int count_words(char *string, char *delimiters, unsigned int *word_counts_arr);
 bool does_file_exist(char *path, struct stat *buffer_status);
 void env_handler(char **args, size_t nbr_of_args);
 char *find_file_in_path(char *filename, struct stat *statbuf);
