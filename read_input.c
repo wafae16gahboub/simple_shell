@@ -21,12 +21,6 @@ void read_input(char **buffer, size_t *buffer_size, bool *is_from_pipe)
 		write(STDOUT_FILENO, "$ ", 2);
 
 	bytes_size = getline(buffer, buffer_size, stdin);
-
-	if ((*buffer)[0] == '\0')
-	{
-		free(*buffer);
-		exit(0);
-	}
 	if (bytes_size == -1)
 	{
 		free(*buffer);

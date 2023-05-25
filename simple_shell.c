@@ -12,7 +12,7 @@ int main(void)
 	bool is_from_pipe = false;
 	struct stat buffer_status;
 
-	while (true)
+	while (true && !is_from_pipe)
 	{
 		read_input(&buffer, &buffer_size, &is_from_pipe);
 		argv = str_split_arr(buffer, "\t ", &word_count);
